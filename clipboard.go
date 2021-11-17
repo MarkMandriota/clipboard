@@ -55,6 +55,7 @@ import (
 	"fmt"
 	"os"
 	"sync"
+	"time"
 )
 
 var (
@@ -116,6 +117,8 @@ func Write(t Format, buf []byte) <-chan struct{} {
 	}
 	return changed
 }
+
+var Frequency = time.Second
 
 // Watch returns a receive-only channel that received the clipboard data
 // whenever any change of clipboard data in the desired format happens.
